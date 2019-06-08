@@ -8,7 +8,8 @@ from pymata_aio.constants import Constants
 
 def calculate_temperature(k, adc): #Setting up a function to return the calculated temperature based on the ADC value and the constants
     adc16 = adc/256
-    temperature = (-2)   * k[4] * 10**(-21) * adc16**4 + \ #This equation is copied straight from the datasheet page 8
+    #This equation is copied straight from the datasheet page 8
+    temperature = (-2)   * k[4] * 10**(-21) * adc16**4 + \ 
                   (4)    * k[3] * 10**(-16) * adc16**3 + \
                   (-2)   * k[2] * 10**(-11) * adc16**2 + \
                   (1)    * k[1] * 10**(-6)  * adc16 \
